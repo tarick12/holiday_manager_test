@@ -1,0 +1,68 @@
+Pseudocode for holiday manager:
+
+create holidayList and holiday class
+get holidays json file
+	assign each holiday to an object
+	create holidayList object 
+fill it with holiday objects
+read holidays from https://www.timeanddate.com/holidays/us/ (year 2020-2024)
+assign each holiday to an object 
+append the holiday objects to the holidayList object
+update the holidays json file
+set user exited to be false
+while the user exited is false
+
+	print menu options
+	get user menu option choice
+	if menu option is ‘add a holiday’
+		while incorrect holiday name
+			get holiday name
+			check if blank
+		while incorrect date
+			get date
+			check if correct format ‘yyyy-mm-dd’
+			check if yyyy, mm, and dd are in correct range
+		if holiday doesn’t exist
+			assign holiday to an object
+			append holiday object to holidayList object
+			print success message
+		else
+			print ‘duplicate holiday’ message
+	else if menu option is ‘remove a holiday’
+		while incorrect year
+			get holiday year (option for all)
+		while incorrect holiday name
+			get holiday name
+			check if name exists for year
+			if holiday name exists
+				remove all holiday objects with that name from holidayList object
+			else
+				print ‘not found’ message
+	else if menu option is ‘save holiday list’
+		while incorrect choice
+			get user y/n choice
+		if y
+			update json file to match holidayList object
+	else if menu option is ‘view holidays’
+		while incorrect year
+			get user year
+			check if in range of 1500-2500
+		while incorrect week
+			get user week
+			check if in range of 1-52
+		while incorrect weather choice
+			get user y/n choice
+		if y
+			while incorrect location
+				get user location
+		for each holiday in designated year and week
+			if weather n	
+				print holiday, and date
+			else if weather y
+				get weather forecast for date at location
+				print holiday, date, and weather
+	else if menu option is ‘exit’
+		while incorrect choice
+			get user y/n choice
+		if y
+			set user exited to be true
